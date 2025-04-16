@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+
 const PORT = 3000;
 
 const weatherDataArray = [
@@ -16,10 +17,10 @@ const weatherDataArray = [
 ];
 
 app.get('/weather/:city', (req, res) => {
-  const cityParam = req.params.city;
-  res.json(weatherDataArray.find(item => item.city.replaceAll(' ', '').toLowerCase() === cityParam.toLowerCase()));
+    const cityParam = req.params.city;
+    res.json(weatherDataArray.find(item => item.city.replaceAll(' ', '').toLowerCase() === cityParam.toLowerCase()));
 });
 
 app.listen(PORT, () => {
-  console.log(`API B rodando em http://localhost:${PORT}`);
+    console.log(`API B rodando em http://localhost:${PORT}`);
 });
